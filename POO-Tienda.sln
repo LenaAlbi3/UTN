@@ -1,25 +1,197 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34330.188
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual", "TiendaVirtual\TiendaVirtual.csproj", "{34133F4F-6887-489D-9239-D9B6B1CE4288}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34133F4F-6887-489D-9239-D9B6B1CE4288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34133F4F-6887-489D-9239-D9B6B1CE4288}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34133F4F-6887-489D-9239-D9B6B1CE4288}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34133F4F-6887-489D-9239-D9B6B1CE4288}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F4E3208D-E01A-4B76-80E4-1E4159139B2B}
-	EndGlobalSection
-EndGlobal
+using System.Collections;
+using System.Collections.Generic;
+
+public class Categoria
+{
+    public string NombreCat { get; set; }
+    public List<Producto> Productos { get; set; }
+
+    public Categoria(string nombreCat)
+    {
+        NombreCat = nombreCat;
+        Productos = new List<Producto>();
+    }
+
+    public void AgregarProducto(Producto producto)
+    {
+        Productos.Add(producto);
+    }
+    public void QuitarProducto(string productoNombre)
+    {
+        var prod = Productos.Find(p => p.NombreProd == productoNombre);
+        if (prod != null)
+        {
+            Productos.Remove(prod);
+        }
+    }
+    public void ModificarProducto(string productoNombre, int stock, double precio)
+    {
+        var prod = Productos.Find(p => p.NombreProd == productoNombre);
+        if (prod != null)
+        {
+            prod.CantStock = stock;
+            prod.Precio = precio;
+        }
+        else
+        {
+            Console.WriteLine("Categoría no encontrada.");
+        }
+    }
+
+    public void MostrarProductos()
+    {
+        Console.WriteLine($"Categoría: {NombreCat}");
+        foreach (var producto in Productos)
+        {
+            Console.WriteLine($"   Producto: {producto.NombreProd}\n   Cantidad en stock: {producto.CantStock}\n   Precio: ${producto.Precio}");
+        }
+    }
+}
+
+public class Producto 
+{
+    public string NombreProd { get; set; }
+    public int CantStock { get; set; }
+    public double Precio { get; set; }
+    public Producto(string nombreProd, int cantStock, double precio)
+    {
+        NombreProd = nombreProd;
+        CantStock = cantStock;
+        Precio = precio;
+    }
+}
+
+public class Inventario
+{
+   
+    public List<Categoria> Categorias { get; set; }
+    public Inventario()
+    {
+
+        Categorias = new List<Categoria>();
+    }
+
+    public void AgregarCategoria(Categoria categoria)
+    {
+        Categorias.Add(categoria);
+    }
+
+    public void AgregarProductoACategoria(string nombreCategoria, Producto producto)
+    {
+        var categoria = Categorias.Find(c => c.NombreCat == nombreCategoria);
+        if (categoria != null)
+        {
+            categoria.AgregarProducto(producto);
+        }
+        else
+        {
+            Categoria cat = new Categoria(nombreCategoria);
+            Categorias.Add(cat);
+            
+        }
+    }
+
+    public void QuitarProductoEnCategoria(string nombreCategoria, string productoNombre)
+    {
+        var categoria = Categorias.Find(c => c.NombreCat == nombreCategoria);
+        if (categoria != null)
+        {
+            categoria.QuitarProducto(productoNombre);
+        }
+        else
+        {
+            Console.WriteLine("Categoría no encontrada.");
+
+        }
+    }
+
+    public void ModificarProductoEnCategoria(string nombreCategoria, string nombreProd)
+    {
+
+        var categoria = Categorias.Find(c => c.NombreCat == nombreCategoria);
+        if (categoria != null)
+        {           
+            Console.WriteLine("Ingrese la cantidad:");
+            int stock = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el precio:");
+            double precio = double.Parse(Console.ReadLine());
+
+            categoria.ModificarProducto(nombreProd, stock, precio);
+        }
+        else
+        {
+            Console.WriteLine("Categoría no encontrada.");
+
+        }
+    }
+
+    public void MostrarCategorias()
+    {
+        foreach (var categoria in Categorias)
+        {
+            categoria.MostrarProductos();
+        }
+    }
+
+}
+
+class Program 
+{ 
+    static void Main(string[] args) 
+    {
+        int opc;
+        string nombreprod, nombrecat, catprod;
+        int stock, cantCat;
+        double precio;
+        Inventario inv = new Inventario ();
+        do
+        {
+            Console.Clear();
+            Console.WriteLine($"Bienvenido al sistema de SuperMart\n" +
+            $"Que deseas hacer?\n" +
+            $"1. Agregar Producto Nuevo\n" +
+            $"2. Eliminar Producto\n" +
+            $"3. Editar Producto Existente\n" +
+            $"4. Ver Listado De Productos En Inventario\n" +
+            $"5. Salir");
+            opc = int.Parse(Console.ReadLine());
+            switch (opc)
+            {
+                case 1:
+                    Console.WriteLine("Ingrese la categoria del producto:");
+                    catprod = Console.ReadLine();
+                    Console.WriteLine("Ingrese el Nombre del producto:");
+                    nombreprod = Console.ReadLine();
+                    Console.WriteLine("Ingrese la cantidad:");
+                    stock = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Ingrese el precio:");
+                    precio = double.Parse(Console.ReadLine());
+                    Producto productox = new Producto(nombreprod, stock, precio);
+                    inv.AgregarProductoACategoria(catprod, productox);
+                    break;
+                case 2:
+                    Console.WriteLine("Ingrese el nombre del producto a eliminar: ");
+                    string productoNombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese el nombre de la categoria a la que pertenece: ");
+                    string cat = Console.ReadLine();
+                    inv.QuitarProductoEnCategoria(cat, productoNombre);
+                    break;
+                case 3:
+                    Console.WriteLine("Ingrese el nombre del producto a eliminar: ");
+                    productoNombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese el nombre de la categoria a la que pertenece: ");
+                    cat = Console.ReadLine();
+                    inv.ModificarProductoEnCategoria(cat, productoNombre);
+                    break;
+                case 4:
+                    inv.MostrarCategorias();
+                    break;
+                default: Console.WriteLine("Opcion invalida");
+                    break;
+            }
+
+        } while (opc!= 5);
+
+    }
+
+}
