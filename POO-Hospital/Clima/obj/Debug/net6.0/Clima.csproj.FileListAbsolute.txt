@@ -1,0 +1,14 @@
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\bin\Debug\net6.0\Clima.exe
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\bin\Debug\net6.0\Clima.deps.json
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\bin\Debug\net6.0\Clima.runtimeconfig.json
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\bin\Debug\net6.0\Clima.dll
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\bin\Debug\net6.0\Clima.pdb
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.AssemblyInfoInputs.cache
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.AssemblyInfo.cs
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.csproj.CoreCompileInputs.cache
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.dll
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\refint\Clima.dll
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.pdb
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\Clima.genruntimeconfig.cache
+C:\Users\malbitre\source\repos\POO-Hospital\Clima\obj\Debug\net6.0\ref\Clima.dll

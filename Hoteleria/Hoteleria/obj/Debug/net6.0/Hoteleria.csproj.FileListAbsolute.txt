@@ -1,0 +1,4 @@
+C:\Users\malbitre\source\repos\Hoteleria\Hoteleria\obj\Debug\net6.0\Hoteleria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malbitre\source\repos\Hoteleria\Hoteleria\obj\Debug\net6.0\Hoteleria.AssemblyInfoInputs.cache
+C:\Users\malbitre\source\repos\Hoteleria\Hoteleria\obj\Debug\net6.0\Hoteleria.AssemblyInfo.cs
+C:\Users\malbitre\source\repos\Hoteleria\Hoteleria\obj\Debug\net6.0\Hoteleria.csproj.CoreCompileInputs.cache

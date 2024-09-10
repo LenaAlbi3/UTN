@@ -1,0 +1,4 @@
+C:\Users\malbitre\source\repos\POO-cine\Cinema\obj\Debug\net6.0\Cinema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malbitre\source\repos\POO-cine\Cinema\obj\Debug\net6.0\Cinema.AssemblyInfoInputs.cache
+C:\Users\malbitre\source\repos\POO-cine\Cinema\obj\Debug\net6.0\Cinema.AssemblyInfo.cs
+C:\Users\malbitre\source\repos\POO-cine\Cinema\obj\Debug\net6.0\Cinema.csproj.CoreCompileInputs.cache
