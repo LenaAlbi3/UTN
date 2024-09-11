@@ -124,6 +124,7 @@ public class Entrada
     public Cinema Cine { get; private set;}
     public Pelicula PeliculaE { get; private set;}
 
+    // se hace a traves de cine.Salas 
     public Sala Sala { get; private set;}
 
     public Asiento AsientoE { get; private set;}
