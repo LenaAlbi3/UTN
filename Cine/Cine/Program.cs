@@ -19,91 +19,39 @@ public enum TipoAsiento
 
 public class Pelicula
 {
-    private string _nombrePelicula;
-    private string _generoPelicula;
-    private int _duracionMin;
-    private Formato _formato;
-
-    public string NombrePelicula
-    {
-        get { return _nombrePelicula; }
-        private set { _nombrePelicula = value; }
-    }
-
-    public string GeneroPelicula
-    {
-        get { return _generoPelicula; }
-        private set { _generoPelicula = value; }
-    }
-
-    public int DuracionMin
-    {
-        get { return _duracionMin; }
-        private set { _duracionMin = value; }
-    }
-
-    public Formato Formato
-    {
-        get { return _formato; }
-        private set { _formato = value; }
-    }
-
+    public string NombrePelicula{ get; private set;}
+    public string GeneroPelicula{ get; private set;}
+    public int DuracionMin{ get; private set;}
+    public Formato Formato{ get; private set;}
     public Pelicula(string nombrePelicula, string generoPelicula, int duracionMin, Formato formato)
     {
-        _nombrePelicula = nombrePelicula;
-        _generoPelicula = generoPelicula;
-        _duracionMin = duracionMin;
-        _formato = formato;
+        NombrePelicula = nombrePelicula;
+        GeneroPelicula = generoPelicula;
+        DuracionMin = duracionMin;
+        Formato = formato;
     }
 }
 
 public class Asiento
 {
-    private char _letra;
-    private int _numero;
-    private TipoAsiento _tipo;
-    private bool _ocupado;
-
-    public char Letra
+    public char Letra{ get; private set;}
+    public int Numero{ get; private set;}
+    public TipoAsiento Tipo{ get; private set;}
+    public bool Ocupado{ get; private set;}
+    public Asiento(char letra, int numero, TipoAsiento tipo)
     {
-        get { return _letra; }
-        private set { _letra = value; }
+        Letra = letra;
+        Numero = numero;
+        Tipo = tipo;
+        Ocupado = false;
     }
-
-    public int Numero
-    {
-        get { return _numero; }
-        private set { _numero = value; }
-    }
-
-    public TipoAsiento Tipo
-    {
-        get { return _tipo; }
-        private set { _tipo = value; }
-    }
-
-    public bool Ocupado
-    {
-        get { return _ocupado; }
-        set { _ocupado = value; }
-    }
-
-    public Asiento(char letra, int numero, TipoAsiento tipo, bool ocupado)
-    {
-        _letra = letra;
-        _numero = numero;
-        _tipo = tipo;
-        _ocupado = ocupado;
-    }
+    public void CambiarOcupado() => Ocupado = !Ocupado;
+    
 }
 
 public class Sala
 {
-    private int _numeroSala;
-    private List<Asiento> _asientos;
-    private Pelicula _pelicula;
-    private DateTime _horario;
-
+    public List<Asiento> Asientos{ get; private set;} = new List<Asiento>();
     public int NumeroSala
     {
         get { return _numeroSala; }
@@ -119,35 +67,26 @@ public class Sala
             }
         }
     }
+// al poner signo de pregunta indicamos q el dato puede estar como no, pueden ser nulos
+    public Pelicula? Pelicula { get; private set;}
 
-    public Pelicula Pelicula
-    {
-        get { return _pelicula; }
-        private set { _pelicula = value; }
-    }
+    public DateTime Horario { get; private set;}
 
-    public DateTime Horario
+    public Sala(int numeroSala)
     {
-        get { return _horario; }
-        private set { _horario = value; }
-    }
-
-    public Sala(int numeroSala, Pelicula pelicula)
-    {
-        _numeroSala = numeroSala;
-        _asientos = new List<Asiento>();
-        _pelicula = pelicula; // Asignación del valor de _pelicula
+        NumeroSala = numeroSala;
     }
 
     public void AgregarAsiento(Asiento asiento)
     {
-        _asientos.Add(asiento);
+        Asientos.Add(asiento);
+    }
+    public void AgregarAsiento(List<Asiento> asientos)
+    {
+        Asientos.AddRange(asientos);
     }
 
-    public void DefinirHorario(DateTime hora)
-    {
-        _horario = hora;
-    }
+    public void DefinirHorario(DateTime hora) => Horario = hora;
 
     public void ReproducirPelicula()
     {
@@ -164,70 +103,38 @@ public class Sala
 
 public class Cinema
 {
-    private string _nombreCine;
-    private List<Sala> _salas;
-
-    public string NombreCine
-    {
-        get { return _nombreCine; }
-        private set { _nombreCine = value; }
-    }
+    public string NombreCine { get; private set; }
+    public List<Sala> Salas { get; private set; } = new List <Sala>();
 
     public Cinema(string nombreCine)
     {
-        _nombreCine = nombreCine;
-        _salas = new List<Sala>();
+        NombreCine = nombreCine;
+        Salas = new List<Sala>();
     }
 
     public void AgregarSala(Sala sala)
     {
-        _salas.Add(sala);
+        Salas.Add(sala);
     }
 }
 
 public class Entrada
 {
-    private Pelicula _pelicula;
-    private Sala _sala;
-    private Asiento _asientoE;
-    private Formato _formatoE;
 
-    // no entendi como poner el cine sin crearlo en el constructor pq no va a haber mas de un cine
-    public Cinema Cine
-    {
-        get { return Cine; }
-        private set { Cine = value; }
-    }
+    public Cinema Cine { get; private set;}
+    public Pelicula PeliculaE { get; private set;}
 
-    public Pelicula Pelicula
-    {
-        get { return _pelicula; }
-        private set { _pelicula = value; }
-    }
+    public Sala Sala { get; private set;}
 
-    public Sala Sala
-    {
-        get { return _sala; }
-        private set { _sala = value; }
-    }
+    public Asiento AsientoE { get; private set;}
 
-    public Asiento AsientoE
-    {
-        get { return _asientoE; }
-        private set { _asientoE = value; }
-    }
-
-    public Formato FormatoE
-    {
-        get { return _formatoE; }
-        private set { _formatoE = value; }
-    }
+    public Formato FormatoE{ get; private set;}
 
     public double Precio
     {
         get
         {
-            if (_pelicula == null || _asientoE == null)
+            if (PeliculaE == null || AsientoE == null)
             {
                 throw new InvalidOperationException("Película o asiento no están definidos.");
             }
@@ -235,7 +142,7 @@ public class Entrada
             double basePrecio;
 
             
-            switch (_pelicula.Formato)
+            switch (PeliculaE.Formato)
             {
                 case Formato._2D_Subtitulada:
                     basePrecio = 50;
@@ -260,7 +167,7 @@ public class Entrada
             }
 
             // Ajustar el precio según el tipo de asiento
-            switch (_asientoE.Tipo)
+            switch (AsientoE.Tipo)
             {
                 case TipoAsiento.Superseat:
                     return basePrecio + 100;
@@ -274,10 +181,10 @@ public class Entrada
 
     public Entrada(Pelicula pelicula, Sala sala, Asiento asientoE)
     {
-        _pelicula = pelicula;
-        _sala = sala;
-        _asientoE = asientoE;
-        _formatoE = pelicula.Formato; // Establecer formato basado en la película
+        Pelicula = pelicula;
+        Sala = sala;
+        AsientoE = asientoE;
+        FormatoE = pelicula.Formato;
     }
 }
 public class Boleteria
