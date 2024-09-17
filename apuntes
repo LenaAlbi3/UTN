@@ -1,0 +1,74 @@
+// atributo aclarado /-
+public double CostoBaseMemb {
+            get
+            {
+                switch (Membresia)
+                {
+                    case TipoMembresia.Basico:
+                        return 30;
+                    case TipoMembresia.Premium:
+                        return 50;
+                    case TipoMembresia.Vip:
+                        return 80;
+                    default:
+                        return 0;
+                }
+            }
+
+}
+
+// validacion
+
+public int Velocidad
+    {
+        get { return _velocidad; }
+        set
+        {
+            if (value > 0)
+            {
+                _velocidad = value;
+            }
+            else
+            {
+                Console.WriteLine("La velocidad debe ser mayor a 0");
+            }
+        }
+}
+
+// acumulador
+
+public double CostoTotalClases
+        {
+            get
+            {
+                double costoTotal = 0;
+                foreach(var clase in ClasesAdicionales)
+                {
+                    costoTotal += clase.Costo;
+                }
+            }
+        }
+
+// crear obj por tipo
+
+switch (tipoDePlan)
+        {
+            case 1:
+                unPlanDeInternet = new PlanResidencial(nombrePlan, velocidad, precioMensual);
+                break;
+            case 2:
+                unPlanDeInternet = new PlanEmpresarial(nombrePlan, velocidad, precioMensual);
+                break;
+            case 3:
+                unPlanDeInternet = new PlanMobile(nombrePlan, velocidad, precioMensual);
+                break;
+            default:
+                Console.WriteLine("Opción inválida");
+                unPlanDeInternet = new PlanResidencial(nombrePlan, velocidad, precioMensual);
+                break;
+        }
+
+// clases 
+public bool AccesoPiscina => Membresia != TipoMembresia.Basico;
+        public bool AccesoSpa => Membresia == TipoMembresia.Vip;
+        public bool ClasesGrupales => Membresia != TipoMembresia.Basico;
