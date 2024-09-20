@@ -10,6 +10,7 @@
     }
 }
 
+// si creas la clase sistema tickets como estatica con todas sus prop y metodos, almacena todo pero no hace falta q se instancie, se puede usar directamente
 class SistemaTickets
 {
     private Queue<Ticket> cola = new Queue<Ticket>();
