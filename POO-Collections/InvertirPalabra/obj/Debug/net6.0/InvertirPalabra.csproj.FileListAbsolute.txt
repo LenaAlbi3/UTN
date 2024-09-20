@@ -1,0 +1,14 @@
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\bin\Debug\net6.0\InvertirPalabra.exe
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\bin\Debug\net6.0\InvertirPalabra.deps.json
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\bin\Debug\net6.0\InvertirPalabra.runtimeconfig.json
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\bin\Debug\net6.0\InvertirPalabra.dll
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\bin\Debug\net6.0\InvertirPalabra.pdb
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.AssemblyInfoInputs.cache
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.AssemblyInfo.cs
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.csproj.CoreCompileInputs.cache
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.dll
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\refint\InvertirPalabra.dll
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.pdb
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\InvertirPalabra.genruntimeconfig.cache
+C:\Users\malbitre\source\repos\POO-Collections\InvertirPalabra\obj\Debug\net6.0\ref\InvertirPalabra.dll

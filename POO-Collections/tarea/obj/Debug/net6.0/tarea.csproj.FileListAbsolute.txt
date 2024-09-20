@@ -1,0 +1,14 @@
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.AssemblyInfoInputs.cache
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.AssemblyInfo.cs
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.csproj.CoreCompileInputs.cache
+C:\Users\malbitre\source\repos\POO-Collections\tarea\bin\Debug\net6.0\tarea.exe
+C:\Users\malbitre\source\repos\POO-Collections\tarea\bin\Debug\net6.0\tarea.deps.json
+C:\Users\malbitre\source\repos\POO-Collections\tarea\bin\Debug\net6.0\tarea.runtimeconfig.json
+C:\Users\malbitre\source\repos\POO-Collections\tarea\bin\Debug\net6.0\tarea.dll
+C:\Users\malbitre\source\repos\POO-Collections\tarea\bin\Debug\net6.0\tarea.pdb
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.dll
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\refint\tarea.dll
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.pdb
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\tarea.genruntimeconfig.cache
+C:\Users\malbitre\source\repos\POO-Collections\tarea\obj\Debug\net6.0\ref\tarea.dll
