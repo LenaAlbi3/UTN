@@ -13,14 +13,6 @@
         Materias.Add(mat);
 
     }
-    public void MostrarMaterias()
-    {
-        
-        foreach (var mat in Materias)
-        {
-            Console.WriteLine($"{mat}");
-        }
-    }
     
 }
 
@@ -38,15 +30,7 @@ class GrupoEstudio
         Estudiantes.Add(estudiante);
         
     }
-    public void MostrarDetalles()
-    {
 
-        foreach (var est in Estudiantes)
-        {
-            Console.WriteLine($"{est}");
-            est.MostrarMaterias();
-        }
-    }
     public void MostrarEstudiantePorMateria(string materia)
     {
         Console.WriteLine($"Estudiantes en el grupo {NombreGrupo} que estan inscriptos en {materia}");
@@ -81,7 +65,7 @@ public static class SistemaGrupos
         {
             Console.Write("Ingrese el nombre del estudiante: ");
             string nomEst = Console.ReadLine();
-            Console.Write("\nIngrese las materias del estudiante: ");
+            Console.Write("\nIngrese las materias del estudiante separadas por comas: ");
             string materiasInput = Console.ReadLine();
             List<string> Materias = new List<string>(materiasInput.Split(","));
             Estudiante estudiante = new Estudiante(nomEst, Materias);
